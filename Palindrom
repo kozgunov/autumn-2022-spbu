@@ -1,0 +1,35 @@
+ #include <iostream>
+#include <vector> /*palindrom integer task*/
+using namespace std;
+int main()
+{
+	int u, x, j=0;
+	bool palindrom=true;
+	cin >> x;
+	vector<int> array;
+	while (x >= 1)
+	{
+		x = x / 10;
+		u = x % 10;
+		array.push_back(u);
+		j = j + 1;
+	}
+
+	for (int i = 0; i < j; i++)
+	{
+		if (array[i] == array[-i])
+		{
+			palindrom = true;
+			continue;
+		}
+		else
+		{
+			palindrom = false;
+			cout << "it's not palindrom";
+		}
+	}
+	if (palindrom == true)
+	{
+		cout << "it's palindrom";
+	}
+}
