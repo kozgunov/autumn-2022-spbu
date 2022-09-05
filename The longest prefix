@@ -1,0 +1,38 @@
+#include <iostream>
+#include <vector> /*the prefix task*/
+using namespace std;
+int main()
+{
+	vector <string> array, array_splited, i_numbers;
+	string words, word, result;
+	cin >> words;
+	array.push_back(words);
+	for (int i = 0; i < words.size(); i++)
+	{
+		if (words[i] == ',')
+		{
+			array_splited.push_back(word);
+			word = ' ';
+			i_numbers.push_back(i);
+		}
+		else
+		{
+			word[i] += words[i];
+			
+		}
+	}
+	for (int i = 0; i < i_numbers[-1]; i++)
+	{
+		if (array_splited[i] == array_splited[i_numbers[i]]) #I'm not sure,how to compare the beginning of the words simultaneously in this "if"
+		{
+			result += array_splited[i]; 
+		}
+		else
+		{
+			exit;
+		}
+	}
+	cout << result;
+
+}
+
