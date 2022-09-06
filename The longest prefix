@@ -3,7 +3,7 @@
 using namespace std;
 int main()
 {
-	vector <string> array, array_splited, i_numbers;
+	vector <string> array, array_splited, last_word;
 	string words, word, result;
 	cin >> words;
 	array.push_back(words);
@@ -12,25 +12,30 @@ int main()
 		if (words[i] == ',')
 		{
 			array_splited.push_back(word);
+			last_word.push_back(word);
 			word = ' ';
-			i_numbers.push_back(i);
 		}
 		else
 		{
 			word[i] += words[i];
-			
+
 		}
 	}
-	for (int i = 0; i < i_numbers[-1]; i++)
+	for (int i = 0; i < last_word.size(); i++)
 	{
-		if (array_splited[i] == array_splited[i_numbers[i]]) #I'm not sure,how to compare the beginning of the words simultaneously in this "if"
+		result = last_word[i];
+		for (int j = 0; j < array_splited.size(); j++)
 		{
-			result += array_splited[i]; 
+			if (result == array_splited[j][i])
+			{
+				continue;
+			}
+			else
+			{
+				exit;
+			}
 		}
-		else
-		{
-			exit;
-		}
+		result += last_word[i];
 	}
 	cout << result;
 
