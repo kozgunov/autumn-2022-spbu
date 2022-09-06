@@ -1,0 +1,54 @@
+#include <iostream>
+#include <vector> /*brackets task*/
+using namespace std;
+int main()
+{
+	bool check;
+	string brackets;
+	cin >> brackets;
+	if (brackets.size() / 2)
+	{
+		for (int i = 0; i < brackets.size(); i = i + 2)
+		{
+			int i_plus_1 = i + 1;
+			if (brackets[i] == '(')
+			{
+				if (brackets[i_plus_1] == ')')
+				{
+					check = true;
+				}
+				else
+				{
+					check = false;
+				}
+			}
+			else if (brackets[i] == '{')
+			{
+				if (brackets[i_plus_1] == '}')
+				{
+					check = true;
+				}
+				else
+				{
+					check = false;
+				}
+			}
+			else if (brackets[i] == '[')
+			{
+				if (brackets[i_plus_1] == ']')
+				{
+					check = true;
+				}
+				else
+				{
+					check = false;
+				}
+			}
+		}
+	}
+	else
+	{
+		cout << "false";
+	}
+	cout << check;
+}
