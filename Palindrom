@@ -1,11 +1,15 @@
- #include <iostream>
+#include <iostream>
 #include <vector> /*palindrom integer task*/
 using namespace std;
 int main()
 {
-	int u, x, j=0;
-	bool palindrom=true;
+	int u, x, j = 0;
+	bool palindrom = true;
 	cin >> x;
+	while (x < 0)
+	{
+		cin >> x;
+	}
 	vector<int> array;
 	while (x >= 1)
 	{
