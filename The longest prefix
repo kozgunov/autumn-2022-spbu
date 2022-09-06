@@ -4,7 +4,7 @@ using namespace std;
 int main()
 {
 	vector <string> array, array_splited, last_word;
-	string words, word, result;
+	string words, word, result, check_letter;
 	cin >> words;
 	array.push_back(words);
 	for (int i = 0; i < words.size(); i++)
@@ -23,10 +23,10 @@ int main()
 	}
 	for (int i = 0; i < last_word.size(); i++)
 	{
-		result = last_word[i];
+		check_letter = last_word[i];
 		for (int j = 0; j < array_splited.size(); j++)
 		{
-			if (result == array_splited[j][i])
+			if (check_letter == array_splited[j][i])
 			{
 				continue;
 			}
@@ -35,7 +35,7 @@ int main()
 				exit;
 			}
 		}
-		result += last_word[i];
+		result += check_letter[i];
 	}
 	cout << result;
 
