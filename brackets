@@ -1,9 +1,11 @@
 #include <iostream>
-#include <vector> /*brackets task*/
+#include <vector> //brackets task
+
 using namespace std;
+
 int main()
 {
-	bool check;
+	bool check = false;
 	string brackets;
 	cin >> brackets;
 	if (brackets.size() / 2)
@@ -44,11 +46,12 @@ int main()
 					check = false;
 				}
 			}
+			else
+			{
+				check = false;
+				break;
+			}
 		}
 	}
-	else
-	{
-		cout << "false";
-	}
-	cout << check;
+	cout << check << endl;
 }
