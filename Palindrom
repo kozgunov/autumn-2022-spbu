@@ -1,25 +1,32 @@
-#include <iostream>
-#include <vector> /*palindrom integer task*/
+#include <iostream> /*palindrom integer task*/
+#include <vector> 
+
 using namespace std;
+
 int main()
 {
-	int u, x, j = 0;
+	int u = 0;
+	int x = 0;
+	int length_number = 0;
 	bool palindrom = true;
+	vector <int> array;
 	cin >> x;
+	
 	while (x < 0)
 	{
 		cin >> x;
+		cout << "Pls, write positive number" << endl;
 	}
-	vector<int> array;
+	
 	while (x >= 1)
 	{
 		x = x / 10;
 		u = x % 10;
 		array.push_back(u);
-		j = j + 1;
+		length_number = length_number + 1;
 	}
 
-	for (int i = 0; i < j; i++)
+	for (int i = 0; i < length_number; i++)
 	{
 		if (array[i] == array[-i])
 		{
@@ -29,11 +36,11 @@ int main()
 		else
 		{
 			palindrom = false;
-			cout << "it's not palindrom";
+			cout << "it's not palindrom" << endl;
 		}
 	}
 	if (palindrom == true)
 	{
-		cout << "it's palindrom";
+		cout << "it's palindrom" << endl;
 	}
 }
