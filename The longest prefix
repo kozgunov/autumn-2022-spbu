@@ -1,12 +1,20 @@
 #include <iostream>
-#include <vector> /*the prefix task*/
+#include <vector> //the prefix task
+
 using namespace std;
+
 int main()
 {
-	vector <string> array, array_splited, last_word;
-	string words, word, result, check_letter;
+	vector <string> array;
+	vector <string> array_splited;
+	vector <string> last_word;
+	string words;
+	string word;
+	string result;
+	string check_letter;
 	cin >> words;
 	array.push_back(words);
+	
 	for (int i = 0; i < words.size(); i++)
 	{
 		if (words[i] == ',')
@@ -18,7 +26,6 @@ int main()
 		else
 		{
 			word[i] += words[i];
-
 		}
 	}
 	for (int i = 0; i < last_word.size(); i++)
@@ -26,7 +33,7 @@ int main()
 		check_letter = last_word[i];
 		for (int j = 0; j < array_splited.size(); j++)
 		{
-			if (check_letter == array_splited[j][i])
+			if (check_letter[i] == array_splited[j][i])
 			{
 				continue;
 			}
@@ -37,7 +44,6 @@ int main()
 		}
 		result += check_letter[i];
 	}
-	cout << result;
-
+	cout << result << endl;
 }
 
