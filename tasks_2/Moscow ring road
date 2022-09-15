@@ -1,0 +1,14 @@
+#include <iostream>  
+
+using namespace std;
+
+int main()
+{
+	int speed = 0;
+	int clock_stop = 0;
+	int end_point = 0;
+	cin >> speed;
+	cin >> clock_stop;
+	end_point = (speed * clock_stop) % 109;
+	cout << end_point << std::endl;
+}
