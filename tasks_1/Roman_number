@@ -1,0 +1,54 @@
+#include <iostream> //Roman_number
+
+using namespace std;
+
+int main()
+{
+	char array_roman[] = { 'm', 'd', 'c', 'l', 'x', 'v', 'i' };
+	int array_arab[] = { 1000, 500, 100, 50, 10, 5, 1 };
+	int answer = 0;
+	string input_roman;
+	cin >> input_roman;
+
+	for (int i = 0; i < input_roman.size(); i++)
+		if (input_roman[i] == 'm')
+		{
+			answer += 1000;
+		}
+		else if (input_roman[i] == 'd')
+		{
+			answer += 500;
+		}
+		else if (input_roman[i] == 'c')
+		{
+			answer += 100;
+		}
+		else if (input_roman[i] == 'l')
+		{
+			answer += 50;
+		}
+		else if (input_roman[i] == 'i' && input_roman[i + 1] == 'x')
+		{
+			answer += 9;
+			i += 1;
+		}
+		else if (input_roman[i] == 'i' && input_roman[i + 1] == 'v')
+		{
+			answer += 4;
+			i += 1;
+		}
+		else if (input_roman[i] == 'x')
+		{
+			answer += 10;
+		}
+		else if (input_roman[i] == 'v')
+		{
+			answer += 5;
+		}
+		else if (input_roman[i] == 'i')
+		{
+			answer += 1;
+		}
+
+	cout << answer << endl;
+}
