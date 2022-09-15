@@ -1,0 +1,49 @@
+#include <iostream>
+#include <vector> //the prefix task
+
+using namespace std;
+
+int main()
+{
+	vector <string> array;
+	vector <string> array_splited;
+	vector <string> last_word;
+	string words;
+	string word;
+	string result;
+	string check_letter;
+	cin >> words;
+	array.push_back(words);
+	
+	for (int i = 0; i < words.size(); i++)
+	{
+		if (words[i] == ',')
+		{
+			array_splited.push_back(word);
+			last_word.push_back(word);
+			word = ' ';
+		}
+		else
+		{
+			word[i] += words[i];
+		}
+	}
+	for (int i = 0; i < last_word.size(); i++)
+	{
+		check_letter = last_word[i];
+		for (int j = 0; j < array_splited.size(); j++)
+		{
+			if (check_letter[i] == array_splited[j][i])
+			{
+				continue;
+			}
+			else
+			{
+				exit;
+			}
+		}
+		result += check_letter[i];
+	}
+	cout << result << endl;
+}
+
