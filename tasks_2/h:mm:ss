@@ -1,0 +1,18 @@
+#include <iostream>  
+
+using namespace std;
+
+int main()
+{
+	int hours = 10; //[0;infinity)
+	int minutes = 1; //[0;60]
+	int seconds = 4; //[0;60]
+	//cin >> hours;
+	//cin >> minutes;
+	//cin >> seconds;
+	int minutes_1 = minutes % 10;
+	int minutes_0 = minutes / 10;
+	int seconds_1 = seconds % 10;
+	int seconds_0 = seconds / 10;
+	cout << hours << ':' << minutes_0 << minutes_1 << ':' << seconds_0 << seconds_1 << std::endl;
+}
