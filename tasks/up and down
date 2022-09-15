@@ -1,0 +1,16 @@
+#include <iostream>  
+
+using namespace std;
+
+int main()
+{
+	int height = 0; // height of pole
+	int go_up = 0; // go up
+	int go_down = 0; // go down
+	int days = 0; // how many days 
+	cin >> height;
+	cin >> go_up;
+	cin >> go_down;
+	days = height / (go_up - go_down);
+	cout << days << endl;
+}
