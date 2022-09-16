@@ -1,0 +1,58 @@
+/* 
+1212 - 0
+1111 - 1
+110 - 1
+10 -0 
+0 - 1 (0000 - symmetric)
+*/
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int number = 0;
+	int digit_1000 = 0;
+	int digit_100= 0;
+	int digit_10 = 0;
+	int digit_1 = 0;
+	int final_answer_1 = 0;
+	int final_answer_2 = 0;
+
+	cin >> number;
+
+	digit_1000 = number / 1000;
+	digit_100 = number / 100;
+	digit_100 = digit_100 % 10;
+	digit_10 = number / 10;
+	digit_10 = digit_10 % 10;
+	digit_1 = number % 10;
+	final_answer_1 = digit_1000 - digit_1 + 1;
+	final_answer_2 = digit_100 - digit_10 + 1;
+
+	cout << final_answer_1 << endl;
+	cout << final_answer_2 << endl;
+	cout << "if outputs are 1 and 1, then number is symmetric, otherwise - not" << endl;
+}
+
+ // memory optimization by vars
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int number = 0;
+	int comparison_1000_1 = 0;
+	int comparison_100_10 = 0;
+
+	cin >> number;
+
+	comparison_1000_1 = number / 1000 - number % 10 + 1;
+	comparison_100_10 = ((number / 10) % 10) - ((number / 100) % 10) + 1;
+
+	cout << comparison_1000_1 << endl;
+	cout << comparison_100_10 << endl;
+	cout << "if outputs are 1 and 1, then number is symmetric, otherwise - not" << endl;
+}
