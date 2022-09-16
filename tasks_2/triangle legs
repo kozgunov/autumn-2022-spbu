@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int side_1 = 0;
+	int side_2 = 0;
+	int side_3 = 0;
+	
+	cin >> side_1;
+	cin >> side_2;
+	cin >> side_3;
+
+	if (((side_1) * (side_1) + (side_2) * (side_2)) == (side_3) * (side_3) || ((side_2) * (side_2) + (side_3) * (side_3)) == (side_1) * (side_1) || ((side_1) * (side_1) + (side_3) * (side_3)) == (side_2) * (side_2))
+	{
+		cout << "rectangle type" << endl;
+		exit;
+	}
+	else if (((side_1) * (side_1)+(side_2) * (side_2)) < (side_3) * (side_3) || ((side_2) * (side_2)+(side_3) * (side_3)) < (side_1) * (side_1) || ((side_1) * (side_1)+(side_3) * (side_3)) < (side_2) * (side_2))
+	{
+		cout << "obtuse type" << endl;
+		exit;
+	}
+	else if (((side_1) * (side_1) + (side_2) * (side_2)) > (side_3) * (side_3) || ((side_2) * (side_2) + (side_3) * (side_3)) > (side_1) * (side_1) || ((side_1) * (side_1) + (side_3) * (side_3)) > (side_2) * (side_2))
+	{
+		cout << "acute rectangle" << endl;
+		exit;
+	}
+
+}
