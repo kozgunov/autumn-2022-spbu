@@ -1,0 +1,24 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int division_1 = 0;
+	int answer_1 = 0;
+	int division_2 = 0;
+	int answer_2 = 0;
+
+	cin >> a; // 22
+	cin >> b; // 7
+
+	division_1 = (a / b); // 22 / 7 = 3
+	answer_1 = division_1 * b + (a % b) % a; // 3 * 7 + (22 % 7) % 22 = 21 + 1
+	division_2 = (b / a); // 7 / 22 = 0
+	answer_2 = division_2 * a + (b % a) % b; // 0 * 22 + (7 % 22) % 7 = 0
+
+	cout << answer_1 + answer_2  << endl;
+
+}
