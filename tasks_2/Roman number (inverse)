@@ -1,0 +1,104 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int x = 0;
+	string x_Roman;
+
+	cin >> x;
+
+	while (x > 1000) // this "while" is necessary, so for number 10000 we've to use 10 checks and subtraction by 1000 
+	{
+		x = x - 1000;
+		x_Roman = x_Roman + "M";
+	}
+	if (x >= 500)
+	{
+		x = x - 500;
+		x_Roman = x_Roman + "D";
+	}
+	if (x >= 100)
+	{
+		x = x - 100;
+		x_Roman = x_Roman + "C";
+	}
+	if (x >= 40 && x < 50)
+	{
+		x = x - 40;
+		x_Roman = x_Roman + "XL";
+	}
+	else if (x >= 50)
+	{
+		x = x - 50;
+		x_Roman = x_Roman + "L";
+	}
+	if (x >= 40 && x < 50)
+	{
+		x = x - 40;
+		x_Roman = x_Roman + "XL";
+	}
+	if (x == 9)
+	{
+		x = x - 9;
+		x_Roman = x_Roman + "IX";
+	}
+	else if (x >= 10)
+	{
+		x = x - 10;
+		x_Roman = x_Roman + "X";
+	}
+	if (x == 9)
+	{
+		x = x - 9;
+		x_Roman = x_Roman + "IX";
+	}
+	else if (x >= 10)
+	{
+		x = x - 10;
+		x_Roman = x_Roman + "X";
+	}
+	if (x == 9)
+	{
+		x = x - 9;
+		x_Roman = x_Roman + "IX";
+	}
+	else if (x >= 10)
+	{
+		x = x - 10;
+		x_Roman = x_Roman + "X";
+	}
+	if (x == 9)
+	{
+		x = x - 9;
+		x_Roman = x_Roman + "IX";
+	}
+	if (x == 4)
+	{
+		x = x - 4;
+		x_Roman = x_Roman + "IV";
+	}
+	else if (x >= 5)
+	{
+		x = x - 5;
+		x_Roman = x_Roman + "V";
+	}
+	if (x >= 1)
+	{
+		x = x - 1;
+		x_Roman = x_Roman + "I";
+	}
+	if (x >= 1)
+	{
+		x = x - 1;
+		x_Roman = x_Roman + "I";
+	}
+	if (x >= 1)
+	{
+		x = x - 1;
+		x_Roman = x_Roman + "I";
+	}
+
+	cout << x_Roman << endl;
+}
