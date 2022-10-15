@@ -1,0 +1,41 @@
+#include <iostream> // automat task
+
+using namespace std;
+
+int main()
+{
+	int k = 0;
+	int n = -1;
+	int m = -1;
+	int d = 0;
+
+	while (k > 1000 || k < 1)
+	{
+		cout << "input amount of automats (k) :";
+		cin >> k;
+		cout << endl;
+	}
+
+	for (int i = 0; i <= k; i++)
+	{
+		n = -1;
+		m = -1;
+
+		while (n > 1000 || n < 0)
+		{
+			cout << "input condition of automat (n) :";
+			cin >> n;
+			cout << endl;
+		}
+		while (m > 26 * n * n || m < 0)
+		{
+			cout << "input transformation(m) :";
+			cin >> m;
+			cout << endl;
+		}
+
+		d = 19 * m + (n + 239) * (n + 366) / 2;
+		cout << d << endl;
+	}
+	// also it's possible to realize by array with pairs (n,m) and find them out for every iterations, but the space complexity would be worse!
+}
