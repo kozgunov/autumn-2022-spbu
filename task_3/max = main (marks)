@@ -4,5 +4,22 @@ using namespace std;
 
 int main()
 {
+	int amount = 0;
+	string marks = 0;
+	int max = 0;
+	int min = INFINITY;
+
+	cin >> marks;
+	cin >> amount;
+
+	cout << marks;
+
+	for (int i = 0; i < amount; i++)
+	{
+		
+	}
+
+
+
 
 }
