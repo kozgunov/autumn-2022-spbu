@@ -1,27 +1,41 @@
 #include <iostream>
 #include <vector>
+#include <sstream>
 
 using namespace std;
 
 int main()
 {
 	vector <int>numbers;
-	int k = 0; //something wrong with input data!
+	int k = 0;
 	int f_max = 0;
-	int f_min = 0;
+	int f_min = 10000005; //INF doesn't work
+	int amount = 0;
 
-	cin >> k; // cycle with appending cycle
+	cout << "write amount of numbers : ";
+	cin >> amount ;
+	cout << endl;
 
-	numbers.push_back(k);
+	for (int i = 0; i < amount; i++)
+	{
+		cout << "write " << i << " number: ";
+		cin >> k;
+		numbers.push_back(k);
+	}
 
-	for (int i = 0; i <= numbers.size(); i++)
+	for (int i = 0; i < numbers.size(); i++)
 	{
 		if (i % 2 == 0)
 			if (f_max < numbers[i])
+			{
 				f_max = numbers[i];
-		else if (i % 2 == 1)
+			}
+		if (i % 2 == 1) // somewhy doesn't work with else if!
 			if (f_min > numbers[i])
+			{
 				f_min = numbers[i];
+			}
 	}
 	cout << f_min + f_max << endl;
+
 }
