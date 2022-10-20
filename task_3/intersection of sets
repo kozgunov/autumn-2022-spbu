@@ -1,0 +1,66 @@
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main()
+{
+	int a = 0;
+	int b = 0;
+	int amount_a = 0;
+	int amount_b = 0;
+	vector <int> a_numbers;
+	vector <int> b_numbers;
+	int min = 0;
+	vector <int> repeat;
+
+	cout << "print amount of numbers: ";
+	cin >> amount_a;
+	cin >> amount_b;
+	
+	cout << "print first numbers: ";
+
+	for (int i = 0; i < amount_a; i++)
+	{
+		cin >> a;
+		a_numbers.push_back(a);
+	}
+
+	cout << "print second numbers: ";
+
+	for (int i = 0; i < amount_b; i++)
+	{
+		cin >> b;
+		b_numbers.push_back(b);
+	}
+
+	if (amount_a < amount_b)
+	{
+		min = amount_b;
+	}
+	else
+	{
+		min = amount_a;
+	}
+	for (int i = 0; i < min; i++)
+	{
+		for (int j = 0; j < min; j++)
+		{
+			if (a_numbers[i] == b_numbers[j])
+			{
+				repeat.push_back(a_numbers[i]);
+				for(int k = 0; k < repeat.size(); k++)
+					if (a_numbers[i] == repeat[k])
+					{
+						exit;
+					}
+					else
+					{
+						cout << a_numbers[i] << ' ';
+					}
+
+			}
+		}
+	}
+
+	
+}
