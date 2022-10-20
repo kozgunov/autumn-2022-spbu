@@ -8,9 +8,10 @@ int main()
 	int b = 0;
 	int counter = 1;
 	int max = 0;
-	int i = 2;
+	int divisor= 2;
 
-	cin >> a >> b;
+	cin >> a;
+	cin	>> b;
 
 	if (a >= b)
 	{
@@ -21,25 +22,25 @@ int main()
 		max = b;
 	}
 
-	while (a != 1 || b != 1 || i != max)
+	while (a != 1 || b != 1 || divisor != max)
 	{
-		if (a % i == 0 && b % i == 0)
+		if (a % divisor == 0 && b % divisor == 0)
 		{
-			counter *= i;
-			a = a / i;
-			b = b / i;
+			counter *= divisor;
+			a = a / divisor;
+			b = b / divisor;
 		}
-		else if ( b % i == 0)
+		if (b % divisor == 0)
 		{
-			counter *= i;
-			b = b / i;
+			counter *= divisor;
+			b = b / divisor;
 		}
-		else if (a % i == 0 )
+		if (a % divisor == 0)
 		{
-			counter *= i;
-			a = a / i;
+			counter *= divisor;
+			a = a / divisor;
 		}
-		i += 1;
+		divisor += 1;
 	}
 	cout << counter << endl;
 
