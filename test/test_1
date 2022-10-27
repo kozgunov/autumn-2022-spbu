@@ -1,0 +1,70 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	int n = 10;
+	int input_number = 1;
+	int count = 0;
+	int* a = (int*)malloc(sizeof(int) * n);
+	int index_1 = 0;
+	int index_2 = 0;
+	int element = 0;
+
+
+	while (input_number != 0)
+	{
+		cout << "1 - Add\n" << endl;
+		cout << "2 - Print\n" << endl;
+		cout << "3 - Delete\n" << endl;
+		cout << "4 - Swap\n" << endl;
+		cout << "0 - exit\n" << endl;
+		cin >> input_number;
+
+		switch (input_number)
+		{
+		case 1: // Add
+		{
+			int* a = (int*)malloc(sizeof(int) * (n+1));
+			cout << "input number for appending : ";
+			cin >> element;
+				for  (int i = 0; i < n+1; i++)
+
+
+				exit;
+		}
+		case 2: // print
+		{
+			cout << a << endl;
+			exit;
+		}
+		case 3: // delete
+		{
+			cout << "write index of element for deleting : ";
+			cin >> index_1;
+			for (int i = 0; i < n; i++)
+
+
+			exit;
+		}
+		case 4: // swap
+		{
+			cout << "write indeces of elements for swapping : ";
+			cin >> index_1;
+			cin >> index_2;
+			for (int i = 0; i < n; i++)
+
+
+			exit;
+		}
+		case 0: //exit
+		{
+			input_number = 0;
+			continue; 
+		}
+		}
+	}
+
+
+}
