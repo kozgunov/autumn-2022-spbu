@@ -1,0 +1,31 @@
+#include <iostream>
+
+using namespace std;
+
+int cube_express(int n);
+
+int main()
+{
+	int n;
+	cin >> n;
+
+	cout << cube_express(n);
+
+
+}
+
+int cube_express(int n) 
+{
+	int try_num;
+	try_num = 1;
+	if (n > 0)
+	{
+		if ((n - (try_num) * (try_num) * (try_num)) > 0)
+		{
+			try_num++;
+		}
+	}
+
+}
+
+
