@@ -1,0 +1,34 @@
+#include <iostream>
+
+using namespace std;
+
+int min(int a, int b, int c , int d);
+
+int main()
+{
+	int a;
+	int b;
+	int c;
+	int d;
+	cout << "input number: ";
+	cin >> a;
+	cout << endl;
+	cout << "input number: ";
+	cin >> b;
+	cout << endl;
+	cout << "input number: ";
+	cin >> c;
+	cout << endl;
+	cout << "input number: ";
+	cin >> d;
+	cout << endl;
+
+	cout << min(a, b, c, d) << endl;
+
+
+}
+
+int min(int a, int b, int c, int d)
+{
+	return a <= b&& a <= c&& a <= d ? a : min(b, c, d, a);
+}
