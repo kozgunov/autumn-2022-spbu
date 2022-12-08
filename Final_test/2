@@ -1,0 +1,28 @@
+#include <iostream>
+
+using namespace std;
+
+int inv(int n);
+
+int main()
+{
+	int n;
+	cin >> n;
+	inv(n);
+
+}
+
+int inv(int n)
+{
+	int element;
+	cin >> element;
+	int return_number;
+	return_number = 0;
+	if (n > 0)
+	{
+		inv(n);
+	}
+	cout << element;
+}
+
+
