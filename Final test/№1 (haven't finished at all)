@@ -2,32 +2,75 @@
 
 using namespace std;
 
-int function(int n);
+int spiral_number(int n, int* max_n[], bool bool_sign, int height_pos, int width_pos, int ordinal_number);
 
-int main()
+int main() 
 {
-	int n;
-	cin >> n;
-	int *arr = new int[n * n];
+    int n;
+    cin >> n;
+    bool bool_sign = 1; // 1 for straight forward running and 0 for backward running (1 2 3 4 5 - s.f., 6 7  - b.w....)
+    int *max_n[10];
+    int height_pos = 0; // always
+    int width_pos = 0; //always
+    int ordinal_number = 1; // starting position
 
-	for (int i = 0; i < n * n; i++)
-		for (int j = 0; j < n * n; j++)
-		{
-			arr[i] = j + 1;
-			cout << "Value of " << i+1 << " element is " << arr[i] << endl;
-		}
-	delete[] arr;
-
-	function(n);
-
-
-
+    for (int i = 0; i < n; i++)
+        max_n[i] = new int[n];
+    spiral_number(n, max_n, bool_sign, height_pos, width_pos, ordinal_number);
+    
+    for (int i = 0; i < n; i++) // output is possible to do inside the function and it'd faster, but without such structure like here
+    {
+        for (int j = 0; j < n; j++)
+        {
+            if (max_n[i][j] < 10)
+                cout << " " << max_n[i][j] << " ";
+            else 
+                cout << max_n[i][j] << " ";
+        }
+        cout << endl;
+    }
 }
 
-
-int function(const int n)
+int spiral_number(int n, int *max_n[], bool bool_sign, int height_pos, int width_pos, int ordinal_number)
 {
-	int var = n*n;
-	//cout << var;
-	return 1;
+    if (n == 1) // the center
+    {
+        max_n[height_pos][width_pos] = ordinal_number;
+        //return 1;
+    }
+    if (bool_sign == 0) // b.w.
+    {
+        for (int i = 0; i < n; i++)
+        {
+            max_n[height_pos][width_pos - i] = ordinal_number;
+            ordinal_number = ordinal_number + 1;
+        }
+        ordinal_number = ordinal_number - 1;
+
+        for (int j = 0; j < n; j++)
+        {
+            max_n[height_pos - j][width_pos - n + 1] = ordinal_number;
+            ordinal_number = ordinal_number + 1;
+        }
+        bool_sign = 1;
+        spiral_number(n - 1, max_n, bool_sign, height_pos - n + 1, width_pos - n + 2, ordinal_number); // we are in (0, 1) position and go straight forward
+    }
+
+    else if (bool_sign == 1) // s.f.
+    {
+        ordinal_number = ordinal_number - 1;
+        for (int i = 0; i < n; i++) // 0 1 2 - positiions // n = 3
+        {
+            ordinal_number++;
+            max_n[height_pos][width_pos + i] = ordinal_number;
+        }
+
+        for (int j = 0; j < n; j++) // 5 8 positions
+        {
+            max_n[height_pos + j][width_pos + n - 1] = ordinal_number;
+            ordinal_number = ordinal_number + 1;
+        }
+        bool_sign = 0;
+        spiral_number(n - 1, max_n, bool_sign, height_pos + n - 1, width_pos + n - 2,  ordinal_number); //when we are in the corner (n-1,n-1 position) and we go backward
+    }
 }
